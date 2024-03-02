@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hue: 240;
+    --bg-color:hsl(var(--hue), 5%, 7%);
+    --text-color:hsl(var(--hue), 40%, 98%);
+    --primary-color:hsl(var(--hue), 6%, 21%);
+    --controls-bg-color:hsl(var(--hue), 9%, 89%);
+    --fill-color: #FFFFFF;
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+    --bg-color:hsl(var(--hue), 40%, 98%);
+    --text-color:hsl(var(--hue), 6%, 21%);
+    --controls-bg-color: hsl(var(--hue), 0%, 80%);
+    --fill-color: #323238;
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+    display: none
+}
+
+#toggle-mode {
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    font-size: 3.2rem;
+
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+#app {
+    display: flex;
+    justify-content: space-between;
+    gap: 19.2rem;
+}
+
+#timer-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+}
+
+#buttons-sounds {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+#sounds1, #sounds2 {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 3.2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+#timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12.6rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+#controls {
+    gap: 4rem;
+}
+
+.buttons-svg {
+    fill: var(--fill-color);
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+
+    cursor: pointer;
+
+    font-size: 6.4rem;
+}
+
+.sound-button {
+    background-color: var(--controls-bg-color);
+    padding: 3.2rem;
+    border-radius: 2.4rem;
+}
+
+.secondary {
+    color: var(--button-secondary);
+}
+
+/* controls com running */
+.running .play-button,
+/* .music-on .ph-speaker-none, */
+html:not(.running) .pause-button {
+    /* html:not(.music-on) .ph-speaker-high { */
+        display: none;
+    }
+    
+
+
+/* choosing background sound */
+.selected-button {
+        --controls-bg-color: hsl(194, 97%, 31%);
+        --primary-color: #FFFFFF;
+}
